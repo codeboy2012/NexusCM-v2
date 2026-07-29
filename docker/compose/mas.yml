@@ -1,0 +1,27 @@
+services:
+  mas:
+    image: ghcr.io/element-hq/matrix-authentication-service:latest
+    container_name: nexuscm-mas
+
+    restart: unless-stopped
+
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+    env_file:
+      - ../env/mas.env
+
+    volumes:
+      - mas_data:/data
+      - ../../configs/mas:/config
+
+    expose:
+      - "8080"
+
+    networks:
+      - backend
+      - frontend
+
+    security_opt:
+      - no-new-privileges:true

@@ -1,0 +1,26 @@
+services:
+  redis:
+    image: redis:8-alpine
+    container_name: nexuscm-redis
+
+    restart: unless-stopped
+
+    command:
+      - redis-server
+      - /usr/local/etc/redis/redis.conf
+
+    volumes:
+      - redis_data:/data
+      - ../../configs/redis/redis.conf:/usr/local/etc/redis/redis.conf:ro
+
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+    networks:
+      - backend
+
+    security_opt:
+      - no-new-privileges:true

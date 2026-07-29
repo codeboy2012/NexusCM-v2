@@ -1,0 +1,26 @@
+services:
+  sliding-sync:
+    image: ghcr.io/element-hq/sliding-sync:latest
+    container_name: nexuscm-sliding-sync
+
+    restart: unless-stopped
+
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+    env_file:
+      - ../env/sliding-sync.env
+
+    volumes:
+      - ../../configs/sliding-sync:/config
+
+    expose:
+      - "8009"
+
+    networks:
+      - backend
+      - frontend
+
+    security_opt:
+      - no-new-privileges:true

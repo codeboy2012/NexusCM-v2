@@ -1,0 +1,35 @@
+name: nexuscm
+
+include:
+  - postgres.yml
+  - synapse.yml
+  - caddy.yml
+  - mas.yml
+  - sliding-sync.yml
+  - redis.yml
+  - livekit.yml
+  - coturn.yml
+  - client.yml
+  - admin.yml
+  - website.yml
+
+networks:
+  frontend:
+    driver: bridge
+
+  backend:
+    driver: bridge
+    internal: true
+
+  realtime:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  synapse_data:
+  redis_data:
+  mas_data:
+  livekit_data:
+  coturn_data:
+  caddy_data:
+  caddy_config:

@@ -1,15 +1,19 @@
-# Secrets
+# Environment
 .env
+.env.local
 .env.*
-!.env.example
 
-# Runtime data
-data/
-backups/
+# Logs
+logs/
+*.log
 
 # Docker
-*.pid
-*.log
+docker-data/
+
+# Node
+node_modules/
+npm-debug.log
+pnpm-lock.yaml
 
 # IDE
 .vscode/
@@ -19,8 +23,25 @@ backups/
 .DS_Store
 Thumbs.db
 
-# Node
-node_modules/
+# Build
+dist/
+build/
+.next/
+coverage/
 
-# Python
-__pycache__/
+# Temporary
+tmp/
+.cache/
+
+# Certificates
+*.pem
+*.key
+
+# Database
+*.db
+
+# Docker volumes
+volumes/
+
+# Local overrides
+docker-compose.override.yml

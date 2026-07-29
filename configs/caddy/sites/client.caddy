@@ -1,0 +1,5 @@
+client.ncm.dpdns.org {
+
+    reverse_proxy client:80
+
+}

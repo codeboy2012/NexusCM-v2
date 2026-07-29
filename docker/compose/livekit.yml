@@ -1,0 +1,31 @@
+services:
+  livekit:
+    image: livekit/livekit-server:v1.8.3
+    container_name: nexuscm-livekit
+
+    restart: unless-stopped
+
+    command:
+      - --config
+      - /etc/livekit/livekit.yaml
+
+    volumes:
+      - ../../configs/livekit/livekit.yaml:/etc/livekit/livekit.yaml:ro
+
+    expose:
+      - "7880"
+      - "7881"
+
+    networks:
+      - realtime
+      - backend
+      - frontend
+
+    security_opt:
+      - no-new-privileges:true
+
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:7880"]
+      interval: 30s
+      timeout: 5s
+      retries: 5

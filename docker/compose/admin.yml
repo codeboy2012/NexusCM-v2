@@ -1,0 +1,19 @@
+services:
+  admin:
+    image: nginx:alpine
+
+    container_name: nexuscm-admin
+
+    restart: unless-stopped
+
+    volumes:
+      - ../../clients/ketesa:/usr/share/nginx/html:ro
+
+    expose:
+      - "80"
+
+    networks:
+      - frontend
+
+    security_opt:
+      - no-new-privileges:true

@@ -1,0 +1,24 @@
+services:
+  coturn:
+    image: coturn/coturn:4.7
+    container_name: nexuscm-coturn
+
+    restart: unless-stopped
+
+    command:
+      - -c
+      - /etc/coturn/turnserver.conf
+
+    volumes:
+      - ../../configs/coturn/turnserver.conf:/etc/coturn/turnserver.conf:ro
+
+    ports:
+      - "3478:3478/tcp"
+      - "3478:3478/udp"
+
+    networks:
+      - realtime
+      - frontend
+
+    security_opt:
+      - no-new-privileges:true

@@ -1,0 +1,5 @@
+admin.ncm.dpdns.org {
+
+    reverse_proxy admin:80
+
+}

@@ -1,0 +1,33 @@
+services:
+  synapse:
+    image: matrixdotorg/synapse:latest
+    container_name: nexuscm-synapse
+
+    restart: unless-stopped
+
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+    env_file:
+      - ../env/synapse.env
+
+    volumes:
+      - synapse_data:/data
+      - ../../configs/synapse:/config
+
+    networks:
+      - backend
+      - frontend
+
+    expose:
+      - "8008"
+
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8008/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+    security_opt:
+      - no-new-privileges:true

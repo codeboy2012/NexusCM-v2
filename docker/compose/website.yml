@@ -1,0 +1,17 @@
+services:
+  website:
+    build:
+      context: ../../apps/website
+
+    container_name: nexuscm-website
+
+    restart: unless-stopped
+
+    expose:
+      - "3000"
+
+    networks:
+      - frontend
+
+    security_opt:
+      - no-new-privileges:true

@@ -1,0 +1,5 @@
+home.ncm.dpdns.org {
+
+    reverse_proxy website:3000
+
+}
