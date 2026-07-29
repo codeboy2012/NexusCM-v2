@@ -2,18 +2,9 @@
 
 # NexusCM v2
 
-### A Modern, Open-Source Matrix Communication Platform
+### Repository Bootstrap Archive
 
-Built for communities, organizations, and developers with a focus on performance, customization, security, and simplicity.
-
-[Documentation](docs/ARCHITECTURE.md) •
-[Website](https://ncm.dpdns.org) •
-[Issues](../../issues)
-
----
-
-> ⚠️ **NexusCM v2 is currently under active development.**
-> This repository contains the next generation of NexusCM and is not yet ready for production use.
+This branch preserves the initial repository structure of NexusCM v2 before active development began.
 
 </div>
 
@@ -21,106 +12,60 @@ Built for communities, organizations, and developers with a focus on performance
 
 ## About
 
-NexusCM is an open-source communication platform built on the Matrix ecosystem.
+The **`backup/pre-development`** branch is a snapshot of the project immediately after the repository architecture was created.
 
-Version 2 is a complete rebuild of the original project, featuring a cleaner architecture, improved security practices, modern tooling, and a more modular design.
+It contains:
 
-The goal is to provide an easy-to-deploy Matrix platform that feels polished out of the box while remaining highly customizable.
+- Initial folder structure
+- Repository configuration
+- Documentation
+- GitHub workflows and templates
+- Project metadata
+- No application source code
 
----
-
-## Features (Planned)
-
-- Modern web dashboard
-- Beautiful public website
-- Cinny-based Matrix client
-- Synapse Homeserver
-- Matrix Authentication Service (MAS)
-- Sliding Sync
-- LiveKit voice & video
-- Coturn support
-- Caddy reverse proxy
-- PostgreSQL
-- Redis
-- Docker-first deployment
-- One-command installer
-- Custom branding support
-- Automatic updates
-- Monitoring & maintenance tools
+This branch exists as a historical reference and recovery point.
 
 ---
 
-## Repository Structure
+## Purpose
 
-```text
-apps/
-    admin/
-    api/
-    dashboard/
-    installer/
-    website/
+The goal of this branch is to preserve the original NexusCM v2 repository layout before implementation started.
 
-branding/
-clients/
-configs/
-docker/
-docs/
-packages/
-scripts/
-```
+It allows contributors to:
 
-See **docs/ARCHITECTURE.md** for a complete overview.
+- Compare how the project evolves over time
+- Restore the initial repository structure if needed
+- Reference the planned architecture
 
 ---
 
-## Technology Stack
+## Development
 
-- Matrix
-- Synapse
-- Cinny
-- Matrix Authentication Service (MAS)
-- Sliding Sync
-- LiveKit
-- PostgreSQL
-- Redis
-- Caddy
-- Docker
-- TypeScript
-- Node.js
-- Next.js
+🚧 **No active development occurs on this branch.**
+
+All ongoing development takes place on the **`main`** branch.
 
 ---
 
-## Development Status
+## Repository Status
 
-Current phase:
-
-> 🏗 Repository bootstrap
-
-The project structure has been created and development is beginning.
-
-Upcoming milestones include:
-
-- Core infrastructure
-- Docker stack
-- Authentication
-- Dashboard
-- Branding
-- Installer
-- Production deployment
+| Component | Status |
+|-----------|:------:|
+| Repository Structure | ✅ |
+| Documentation | ✅ |
+| Configuration | ✅ |
+| Source Code | ❌ |
+| Docker Stack | ❌ |
+| Matrix Services | ❌ |
+| Dashboard | ❌ |
 
 ---
 
-## Contributing
+## Related Branches
 
-Contributions, suggestions, bug reports, and feature requests are welcome.
-
-Please open an Issue before starting major work so ideas can be discussed first.
+- `main` — Active development
+- `backup/pre-development` — Initial repository snapshot
 
 ---
 
-## License
-
-Licensed under the MIT License.
-
-See the LICENSE file for details.
+© 2026 CodeBoy2012
